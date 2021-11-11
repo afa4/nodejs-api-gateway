@@ -1,0 +1,21 @@
+[
+  {
+    "url": "http://localhost:3004",
+    "routes": [
+      {
+        "method": "GET",
+        "path": "/service/a",
+        "middlewares": ["ZENDESK_AUTHORIZATION"]
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:3005",
+    "routes": [
+      {
+        "method": "GET",
+        "path": "/service/b"
+      }
+    ]
+  }
+]
