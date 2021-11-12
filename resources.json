@@ -5,7 +5,7 @@
       {
         "method": "GET",
         "path": "/service/a",
-        "middlewares": ["ZENDESK_AUTHORIZATION"]
+        "middleware": "ZENDESK_AUTHORIZATION"
       }
     ]
   },
@@ -14,7 +14,8 @@
     "routes": [
       {
         "method": "GET",
-        "path": "/service/b"
+        "path": "/service/b",
+        "middleware": "LOFT_AUTHORIZATION"
       }
     ]
   }
