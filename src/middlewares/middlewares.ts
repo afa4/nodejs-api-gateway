@@ -24,6 +24,8 @@ function registerMiddlewares() {
   });
 }
 
+// implement strategy pattern
+// all process methods will be void and will throw HttpError when processing problem
 function processMiddleware(req: any, middleware: string) {
   if(middleware == 'ZENDESK_AUTHORIZATION') {
     throw new HttpError("Unnauthorized", 401);
