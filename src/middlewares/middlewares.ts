@@ -1,6 +1,5 @@
 import server from '../server/server';
 import { requestToMiddlewareMap } from '../hosts/hosts';
-import { HttpError } from './error/http.error';
 import middlewareStrategyMap from './strategy/middleware-strategy-map';
 
 function registerMiddlewares() {
@@ -21,4 +20,11 @@ function registerMiddlewares() {
   });
 }
 
-export { registerMiddlewares };
+function registerMiddlewareErrorHandler() {
+  server.use((err: any, req: any, res: any, next: any) => {
+    res.status(err.statusCode ?? 500);
+    res.json({ error: err.message });
+  });
+}
+
+export { registerMiddlewares, registerMiddlewareErrorHandler };
