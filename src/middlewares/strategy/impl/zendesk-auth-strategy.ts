@@ -1,9 +1,10 @@
+import { HttpError } from '../../error/http.error';
 import { MiddlewareStrategy } from '../middleware-strategy';
 
 export class ZendeskAuthStrategy implements MiddlewareStrategy {
-  execute(): void
+  execute(req: any): void
   {
-    throw new Error('Method not implemented.');
+    throw new HttpError('Method not implemented.', 401);
   }
   
 }

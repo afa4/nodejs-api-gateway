@@ -1,3 +1,4 @@
 export interface MiddlewareStrategy {
-  execute(): void;
+  // include method param: Request (express)
+  execute(req: any): void;
 }
