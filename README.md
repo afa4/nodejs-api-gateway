@@ -61,19 +61,17 @@ export interface MiddlewareStrategy {
 }
 ```
 
-Dessa forma, para definir um novo, basta criar uma nova implementação.
-
-A implementação do `CLIENT_AUTHORIZATION`, do exemplo assim, seria algo do tipo:
+Um exemplo do que sería o código do middleware `CLIENT_AUTHORIZATION` está descrito abaixo:
 
 ```typescript
 export class ClientAuthorizationStrategy implements MiddlewareStrategy {
   
-  constructor(private readonly authService: AuthService);
+  constructor(private readonly clientsAuthService: ClientsAuthService);
   
   execute(req: any): void
   {
     try {
-      this.authService.authorize(req);
+      this.clientsAuthService.authorize(req);
     } catch(error) {
       throw new MiddlewareError('Unnauthorized', 401);
     }
@@ -81,7 +79,7 @@ export class ClientAuthorizationStrategy implements MiddlewareStrategy {
 }
 ```
 
-Considere que o authService seria uma implementação específica para o `clients.example.com`.
+Considere que o `clientsAuthService` possuiría regras de negócio para autorizar um usuário no servidor `clients.example.com`.
 
 Como o método `execute` retorna `void`, para autorizar a requisição nesse caso, basta não lançar nenhum erro.
 
