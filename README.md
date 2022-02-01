@@ -1,4 +1,8 @@
-## POC Loftcred API Gateway
+## NodeJs API Gateway
+
+### 0. Bootstrap
+
+`npm start`
 
 ### 1. Definição de Rotas
 

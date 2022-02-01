@@ -4,8 +4,8 @@
     "routes": [
       {
         "method": "GET",
-        "path": "/service/zendesk",
-        "middleware": "ZENDESK_AUTHORIZATION"
+        "path": "/clients",
+        "middleware": "CLIENTS_AUTHORIZATION"
       }
     ]
   },
@@ -14,8 +14,8 @@
     "routes": [
       {
         "method": "GET",
-        "path": "/service/loft",
-        "middleware": "LOFT_AUTHORIZATION"
+        "path": "/pets",
+        "middleware": "PETS_AUTHORIZATION"
       }
     ]
   }
