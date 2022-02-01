@@ -1,4 +1,4 @@
-## POC Loftcred API Gateway
+## Nodejs API Gateway
 
 ### 1. Definição de Rotas
 
@@ -89,7 +89,7 @@ O gateway se responsabilizará por criar uma resposta estruturada para o cliente
 
 #### 2.2 Mapeamento
 
-Por fim, para tornar a implementação ativa, basta adicionar uma novo para chave valor, no [**middlewareStrategyMap**](/src/middleware/strategy/middleware-strategy-map.ts):
+Por fim, para tornar a implementação ativa, basta adicionar uma novo par chave/valor, no [**middlewareStrategyMap**](/src/middleware/strategy/middleware-strategy-map.ts):
 
 ```typescript
 const middlewareStrategyMap: Map<MiddlewareStrategy> = {
